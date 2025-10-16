@@ -1,11 +1,12 @@
 package oop_07
 
 fun main(){
-    val car1 = Car()
-    car1.name = "Tesla"
-    car1.model = "S Plaid"
-    car1.color = "Red"
-    car1.doors = 4
+    val car1 = Car(
+        name = " Tesla   ",
+        model = "S Plaid",
+        color = "Red",
+        doors = 4
+    )
 
     println("Name = ${car1.name}")
     println("Model = ${car1.model}")
@@ -15,11 +16,12 @@ fun main(){
     car1.move()
     car1.stop()
 
-    var car2 = Car()
-    car2.name = "Ford"
-    car2.model = "Mustang"
-    car2.color = "Blue"
-    car2.doors = 2
+    var car2 = Car(
+        name = "Ford",
+        model = "Mustang",
+        color = "Blue",
+        doors = 2
+    )
 
     println("\n")
     println("Name = ${car2.name}")
@@ -31,11 +33,9 @@ fun main(){
     car2.stop()
 }
 
-class Car {
-    var name: String = ""
-    var model: String = ""
-    var color: String = ""
-    var doors = 0
+class Car(name: String, var model:String, var color:String, var doors:Int) {
+
+     var name = name.trim()
 
     fun move(){
         println("The car $name is moving")
